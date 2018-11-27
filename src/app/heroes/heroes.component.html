@@ -1,0 +1,23 @@
+<h2>My Books</h2>
+
+<div>
+  <label>Book name:
+    <input #heroName />
+  </label>
+  <label>Author name:
+    <input #authorName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value, authorName.value); heroName.value=''; authorName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes; let i = index">
+    <a>
+      <span class="badge">{{ i + 1 }}</span> {{hero.book_name}}
+      <b>{{hero.author}}</b>
+    </a>
+  </li>
+</ul>
